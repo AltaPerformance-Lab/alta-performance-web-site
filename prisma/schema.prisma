@@ -1,0 +1,24 @@
+// Este é o "dialeto" do seu banco.
+datasource db {
+  provider     = "postgresql" // Estamos usando Neon (Postgres)
+  url          = env("DATABASE_URL") // Puxa a string do seu .env
+  relationMode = "prisma"
+}
+
+// Este é o "gerador" do Prisma Client
+generator client {
+  provider = "prisma-client-js"
+}
+
+// === NOSSO MODELO DE DADOS ===
+// Isso vai criar a tabela "Lead" no seu banco Neon
+model Lead {
+  id        String   @id @default(cuid()) // Um ID único (ex: clq80n...)
+  nome      String
+  email     String
+  telefone  String
+  mensagem  String? // O '?' torna o campo opcional (embora o 'required' do form vá cuidar disso)
+  createdAt DateTime @default(now()) // Para sabermos quando o lead chegou
+
+  @@map("leads") // Nomeia a tabela no banco como "leads"
+}

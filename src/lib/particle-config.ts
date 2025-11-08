@@ -9,7 +9,7 @@ export const particleOptions: ISourceOptions = {
   },
   particles: {
     number: {
-      value: 60, // Quantidade de pontos
+      value: 40, // Quantidade de pontos
       density: {
         enable: true,
         value_area: 800
@@ -22,7 +22,7 @@ export const particleOptions: ISourceOptions = {
       type: "circle"
     },
     opacity: {
-      value: 0.3, // Opacidade dos pontos
+      value: 0.15, // Opacidade dos pontos
       random: false,
       anim: {
         enable: false,
@@ -45,7 +45,7 @@ export const particleOptions: ISourceOptions = {
     },
     move: {
       enable: true,
-      speed: 1, // Velocidade do movimento
+      speed: 0.5, // Velocidade do movimento
       direction: "none",
       random: false,
       straight: false,
